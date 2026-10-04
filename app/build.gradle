@@ -1,0 +1,24 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'kr.local.anticamera'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'kr.local.anticamera'
+        minSdk 28
+        targetSdk 36
+        versionCode 1
+        versionName '1.0'
+    }
+    flavorDimensions += 'privilege'
+    productFlavors {
+        full { dimension 'privilege' }
+        rootOnly { dimension 'privilege'; applicationIdSuffix '.root' }
+    }
+    buildFeatures { aidl true }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+    buildTypes { release { minifyEnabled false } }
+}
+dependencies {
+    fullImplementation 'dev.rikka.shizuku:api:13.1.5'
+    fullImplementation 'dev.rikka.shizuku:provider:13.1.5'
+}

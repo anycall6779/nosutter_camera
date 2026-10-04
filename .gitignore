@@ -1,0 +1,9 @@
+.gradle/
+local.properties
+**/build/
+libs/
+*.apk
+*.idsig
+*.keystore
+__pycache__/
+build-output.log
